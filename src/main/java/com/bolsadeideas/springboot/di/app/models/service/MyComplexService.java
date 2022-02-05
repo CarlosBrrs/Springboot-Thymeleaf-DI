@@ -11,8 +11,8 @@ El valor del componente se usa para diferentes clases que implementen la misma i
 Desde donde se inyecta se debe especificar cual se va a usar o anotando la principal con @Primary
 */
 //@Service
-@Primary
-@Component("miServicioComplejoPrincipal")
+//@Primary
+//@Component("miServicioComplejoPrincipal")
 public class MyComplexService implements IMyService {
 
     //Una clase componente debe tener siempre un constructor vacio ya que Spring maneja la clase con ese constructor
