@@ -1,6 +1,7 @@
 package com.bolsadeideas.springboot.di.app.controllers;
 
 import com.bolsadeideas.springboot.di.app.models.service.MyService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/app")
 public class IndexController {
 
-    private MyService service = new MyService();
+    //Se desacopla la clase usando @Autowired aquí y @Component/@Service en la clase inyectada
+    //Autowired busca un objeto de esa clase que este registrado en el contenedor de Spring, @Component lo registra
+    @Autowired
+    private MyService service;
 
     @GetMapping({"/index", "/home"})
     public String index(Model model) {
