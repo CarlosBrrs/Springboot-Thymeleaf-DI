@@ -9,7 +9,7 @@ Se puede usar @Service pero es lo mismo, es simplemente más descriptivo, por se
 //El valor del componente se usa para diferentes clases que implementen la misma interface
 // Desde donde se inyecta se debe especificar cual se va a usar o anotando la principal con @Primary
 //@Service
-@Component("miServicioSimpleSecuundario")
+//@Component("miServicioSimpleSecuundario")
 public class MySimpleService implements IMyService {
 
     //Una clase componente debe tener siempre un constructor vacio ya que Spring maneja la clase con ese constructor
