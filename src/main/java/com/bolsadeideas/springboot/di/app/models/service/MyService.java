@@ -8,8 +8,11 @@ El objeto se crea una sola vez en la aplicacion. Es un singleton (una sola insta
 Se puede usar @Service pero es lo mismo, es simplemente más descriptivo, por semántica*/
 //@Service
 @Component
-public class MyService {
+public class MyService implements IMyService {
 
+    //Una clase componente debe tener siempre un constructor vacio ya que Spring maneja la clase con ese constructor
+
+    @Override
     public String operation() {
         return "Ejecutando alguna operación importante...";
     }
