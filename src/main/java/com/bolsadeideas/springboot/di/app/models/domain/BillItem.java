@@ -9,4 +9,10 @@ public class BillItem {
 
     private Product product;
     private Integer quantity;
+
+    //Para poder crear el bean en AppConfig
+    public BillItem(Product product, Integer quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
 }
