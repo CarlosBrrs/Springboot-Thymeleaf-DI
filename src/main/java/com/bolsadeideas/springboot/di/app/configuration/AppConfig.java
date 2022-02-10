@@ -1,8 +1,5 @@
 package com.bolsadeideas.springboot.di.app.configuration;
 
-//import com.bolsadeideas.springboot.di.app.models.domain.BillItem;
-//import com.bolsadeideas.springboot.di.app.models.domain.Product;
-import com.bolsadeideas.springboot.di.app.models.domain.Bill;
 import com.bolsadeideas.springboot.di.app.models.domain.BillItem;
 import com.bolsadeideas.springboot.di.app.models.domain.Product;
 import com.bolsadeideas.springboot.di.app.models.service.IMyService;
@@ -43,7 +40,7 @@ public class AppConfig {
         return Arrays.asList(billItem1, billItem2);
     }
 
-    @Primary
+    @Primary //Tambien se puede seleccionar cual se inyectará con el @Qualifier en el Controller
     @Bean("BillOfficeItems")
     public List<BillItem> itemOfficeList() {
         Product product1 = new Product("Monitor LG", 800000);
