@@ -20,7 +20,7 @@ public class IndexController {
     //El quilifier se usa para definir cual componente se va a inyectar.
     //Se pueden tener varios atributos, unos anotados y otros no con el quilifier (en caso de tener un  primary)
     //Se puede usar el quilifier indicando cual se inyectará sin primary en las clases
-    @Qualifier("miServicioSimpleSecundario")
+    //@Qualifier("miServicioSimpleSecundario")
     private IMyService service;
 
     @GetMapping({"/index", "/home"})

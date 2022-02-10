@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Data
-@Builder
 @Component
 public class Client {
 
@@ -15,5 +14,4 @@ public class Client {
     private String name;
     @Value("${client.lastname}")
     private String lastname;
-
 }

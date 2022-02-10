@@ -1,5 +1,8 @@
 package com.bolsadeideas.springboot.di.app.configuration;
 
+//import com.bolsadeideas.springboot.di.app.models.domain.BillItem;
+//import com.bolsadeideas.springboot.di.app.models.domain.Product;
+import com.bolsadeideas.springboot.di.app.models.domain.Bill;
 import com.bolsadeideas.springboot.di.app.models.domain.BillItem;
 import com.bolsadeideas.springboot.di.app.models.domain.Product;
 import com.bolsadeideas.springboot.di.app.models.service.IMyService;
@@ -29,15 +32,38 @@ public class AppConfig {
         return new MyComplexService();
     }
 
-    @Bean
+    @Bean("BillItems")
     public List<BillItem> itemList() {
-        Product product1 = Product.builder().productName("Camara Sony").price(150000).build();
-        Product product2 = Product.builder().productName("Bicicleta Bianchi").price(500000).build();
+        Product product1 = new Product("Camara Sony", 150000);
+        Product product2 = new Product("Bicicleta Bianchi", 500000);
 
-        BillItem billItem1 = BillItem.builder().product(product1).quantity(2).build();
-        BillItem billItem2 = BillItem.builder().product(product2).quantity(1).build();
+        BillItem billItem1 = new BillItem(product1, 2);
+        BillItem billItem2 = new BillItem(product2, 1);
 
         return Arrays.asList(billItem1, billItem2);
     }
+
+    @Primary
+    @Bean("BillOfficeItems")
+    public List<BillItem> itemOfficeList() {
+        Product product1 = new Product("Monitor LG", 800000);
+        Product product2 = new Product("Notebook ASUS", 1500000);
+        Product product3 = new Product("Impresora HP multifuncional", 560000);
+        Product product4 = new Product("Escritorio oficina", 550000);
+
+        BillItem billItem1 = new BillItem(product1, 2);
+        BillItem billItem2 = new BillItem(product2, 1);
+        BillItem billItem3 = new BillItem(product3, 4);
+        BillItem billItem4 = new BillItem(product4, 3);
+
+        return Arrays.asList(billItem1, billItem2, billItem3, billItem4);
+    }
+
+/*
+    @Bean
+    public BillUsecase billUsecase(Bill bill) {
+        return new BillUsecase(bill);
+    }
+*/
 
 }
